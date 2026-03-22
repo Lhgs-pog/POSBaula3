@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app-bi:
+    build: .
+    container_name: dashboard-bi-php
+    ports:
+    #Abre container para a porta 80
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped

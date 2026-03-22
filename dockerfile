@@ -1,0 +1,8 @@
+# Usa a imagem oficial do PHP na versão 8.2 com o servidor Apache
+FROM php:8.2-apache
+
+# Ativa o módulo de reescrita de URL do Apache (muito útil em projetos PHP)
+RUN a2enmod rewrite
+
+# Dá as permissões corretas para a pasta do servidor
+RUN chown -R www-data:www-data /var/www/html
